@@ -56,7 +56,7 @@ st.markdown("---")
 if st.button("Make Predictions"):
     # Prepare input data for prediction
     input_data = pd.DataFrame({
-        "TglPengumuman_Bln_value": [TglPengumuman_Bln_value],
+        "TglPengumuman_Bln": [TglPengumuman_Bln_value],
         "Lokasi_enc": [Lokasi_enc],
         "Klasifikasi_enc": [Klasifikasi_enc],
         "JenisBelanja_enc": [JenisBelanja_enc],
