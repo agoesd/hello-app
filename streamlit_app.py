@@ -127,4 +127,4 @@ if st.button("Make Predictions"):
 
     # Display predictions
     st.success(f"Predicted Procurement Time: {time_prediction}")
-    st.success(f"Predicted Efisiensi: {efisiensi_prediction:.0f}%")
+    st.success(f"Predicted Efisiensi: {efisiensi_prediction:.2f}%")
