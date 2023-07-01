@@ -33,55 +33,54 @@ TglPengumuman_Bln = st.sidebar.selectbox("Bulan Pengumuman", list(bulan_options.
 TglPengumuman_Bln_value = bulan_options[TglPengumuman_Bln]
 
 lokasi_options = {
-	"Aceh": 23,
-	"Bali": 13,
-	"Banten": 5,
-	"Bengkulu": 25,
-	"DI Yogyakarta": 9,
-	"DKI Jakarta": 0,
-	"Jambi": 7,
-	"Jawa Barat": 8,
-	"Jawa Tengah": 11,
-	"Jawa Timur": 1,
-	"Kalimantan Selatan": 21,
-	"Kalimantan Tengah": 16,
-	"Kalimantan Timur": 2,
-	"Kalimantan Utara": 19,
-	"Kepulauan Riau": 4,
-	"Lampung": 17,
-	"Maluku": 27,
-	"Nusa Tenggara Barat": 26,
-	"Nusa Tenggara Timur": 15,
-	"Papua": 24,
-	"Riau": 12,
-	"Sulawesi Selatan": 3,
-	"Sulawesi Tengah": 6,
-	"Sulawesi Tenggara": 20,
-	"Sulawesi Utara": 22,
-	"Sumatera Barat": 18,
-	"Sumatera Selatan": 14,
-	"Sumatera Utara": 10
+    "Aceh": 23,
+    "Bali": 13,
+    "Banten": 5,
+    "Bengkulu": 25,
+    "DI Yogyakarta": 9,
+    "DKI Jakarta": 0,
+    "Jambi": 7,
+    "Jawa Barat": 8,
+    "Jawa Tengah": 11,
+    "Jawa Timur": 1,
+    "Kalimantan Selatan": 21,
+    "Kalimantan Tengah": 16,
+    "Kalimantan Timur": 2,
+    "Kalimantan Utara": 19,
+    "Kepulauan Riau": 4,
+    "Lampung": 17,
+    "Maluku": 27,
+    "Nusa Tenggara Barat": 26,
+    "Nusa Tenggara Timur": 15,
+    "Papua": 24,
+    "Riau": 12,
+    "Sulawesi Selatan": 3,
+    "Sulawesi Tengah": 6,
+    "Sulawesi Tenggara": 20,
+    "Sulawesi Utara": 22,
+    "Sumatera Barat": 18,
+    "Sumatera Selatan": 14,
+    "Sumatera Utara": 10
 }
 Lokasi_enc = st.sidebar.selectbox("Lokasi Pekerjaan", list(lokasi_options.keys()), index=0)
 Lokasi_enc_value = lokasi_options[Lokasi_enc]
 
 klasifikasi_options = {
-	"IT": 0,
-	"Kendaraan": 11,
-	"Konsultansi": 7,
-	"Konsultansi Konstruksi": 4,
-	"Operasional/TUSI": 1,
-	"Pekerjaan Konstruksi": 2,
-	"Pemeliharaan Bangunan Gedung": 12,
-	"Pemeliharaan Peralatan/Mesin": 3,
-	"Penambah Nilai Gedung": 13,
-	"Pengadaan Peralatan Mesin": 6,
-	"Peralatan dan Perlengkapan Perkantoran": 5,
-	"Sewa Fotokopi": 8,
-	"Sewa Kendaraan": 10,
-	"Sewa operasional lain": 9
+    "IT": 0,
+    "Kendaraan": 11,
+    "Konsultansi": 7,
+    "Konsultansi Konstruksi": 4,
+    "Operasional/TUSI": 1,
+    "Pekerjaan Konstruksi": 2,
+    "Pemeliharaan Bangunan Gedung": 12,
+    "Pemeliharaan Peralatan/Mesin": 3,
+    "Penambah Nilai Gedung": 13,
+    "Pengadaan Peralatan Mesin": 6,
+    "Peralatan dan Perlengkapan Perkantoran": 5,
+    "Sewa Fotokopi": 8,
+    "Sewa Kendaraan": 10,
+    "Sewa operasional lain": 9
 }
-
 Klasifikasi_enc = st.sidebar.selectbox("Klasifikasi", list(klasifikasi_options.keys()), index=0)
 Klasifikasi_enc_value = klasifikasi_options[Klasifikasi_enc]
 
@@ -105,9 +104,6 @@ KlasBJ_JasaKonsultasi = 1 if jenis_pengadaan_options[jenis_pengadaan] == "KlasBJ
 KlasBJ_JasaLainnya = 1 if jenis_pengadaan_options[jenis_pengadaan] == "KlasBJ_JasaLainnya" else 0
 KlasBJ_PekerjaanKonstruksi = 1 if jenis_pengadaan_options[jenis_pengadaan] == "KlasBJ_PekerjaanKonstruksi" else 0
 KlasBJ_PengadaanBarang = 1 if jenis_pengadaan_options[jenis_pengadaan] == "KlasBJ_PengadaanBarang" else 0
-
-#Pagu2 = st.sidebar.number_input("Nilai Pagu (dalam ribuan)")
-#HPS2 = st.sidebar.number_input("Nilai HPS (dalam ribuan)")
 
 Pagu2 = st.sidebar.number_input("Nilai Pagu (dalam ribuan)", value=0, format="%d", step=1000)
 HPS2 = st.sidebar.number_input("Nilai HPS (dalam ribuan)", value=0, format="%d", step=1000)
