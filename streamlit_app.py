@@ -109,18 +109,18 @@ KlasBJ_PengadaanBarang = 1 if jenis_pengadaan_options[jenis_pengadaan] == "KlasB
 Pagu2 = st.sidebar.number_input("Nilai Pagu")
 HPS2 = st.sidebar.number_input("Nilai HPS")
 
-# Load the Procurement Time model
+# Model prediksi waktu tender/seleksi
 time_model = joblib.load("dtr_lamatender.joblib")
 
-# Load the Efisiensi model
+# Model Efisiensi
 efisiensi_model = joblib.load("dtr_efisiensi.joblib")
 
-# Procurement time prediction
-st.title("Procurement Prediction")
+# Judul
+st.title("Prediksi Lama Waktu Tender/Seleksi")
 st.markdown("---")
 
-# Make predictions button
-if st.button("Make Predictions"):
+# Tombol aksi
+if st.button("Kalkulasi"):
     # Prepare input data for prediction
     input_data = pd.DataFrame({
         "TglPengumuman_Bln": [TglPengumuman_Bln_value],
@@ -136,10 +136,10 @@ if st.button("Make Predictions"):
         "HPS2": [HPS2]
     })
 
-    # Make Procurement Time prediction
+    # Prediksi lama tender/seleksi
     time_prediction = int(time_model.predict(input_data)[0])
 
-    # Make Efisiensi prediction
+    # Prediksi Efisiensi
     efisiensi_prediction = efisiensi_model.predict(input_data)[0] * 100
 
     # Display predictions
