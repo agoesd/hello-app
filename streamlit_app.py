@@ -31,7 +31,7 @@ with open("modeldecisiontree_lamatender.joblib", "rb") as file:
 st.subheader("Procurement Time Prediction")
 
 # Make prediction
-prediction = model.predict([[feature1, feature2]])[0]
+prediction = model.predict([[TglPengumuman_Bln, Lokasi_enc,Klasifikasi_enc,JenisBelanja_enc,MetodePengadaan_enc, KlasBJ_JasaKonsultasi, KlasBJ_JasaLainnya, KlasBJ_PekerjaanKonstruksi, KlasBJ_PengadaanBarang, Pagu2, HPS2]])[0]
 
 # Display prediction
 st.write("Predicted Procurement Time:", prediction)
