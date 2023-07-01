@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import numpy as np
 
 # Set page title and layout
 st.set_page_config(
@@ -41,11 +42,14 @@ st.markdown("---")
 
 # Make predictions button
 if st.button("Make Predictions"):
+    # Prepare input data for prediction
+    input_data = np.array([[TglPengumuman_Bln, Lokasi_enc, Klasifikasi_enc, JenisBelanja_enc, MetodePengadaan_enc, KlasBJ_JasaKonsultasi, KlasBJ_JasaLainnya, KlasBJ_PekerjaanKonstruksi, KlasBJ_PengadaanBarang, Pagu2, HPS2]])
+
     # Make Procurement Time prediction
-    time_prediction = time_model.predict([[TglPengumuman_Bln, Lokasi_enc, Klasifikasi_enc, JenisBelanja_enc, MetodePengadaan_enc, KlasBJ_JasaKonsultasi, KlasBJ_JasaLainnya, KlasBJ_PekerjaanKonstruksi, KlasBJ_PengadaanBarang, Pagu2, HPS2]])[0]
+    time_prediction = time_model.predict(input_data)[0]
 
     # Make Efisiensi prediction
-    efisiensi_prediction = efisiensi_model.predict([[TglPengumuman_Bln, Lokasi_enc, Klasifikasi_enc, JenisBelanja_enc, MetodePengadaan_enc, KlasBJ_JasaKonsultasi, KlasBJ_JasaLainnya, KlasBJ_PekerjaanKonstruksi, KlasBJ_PengadaanBarang, Pagu2, HPS2]])[0]
+    efisiensi_prediction = efisiensi_model.predict(input_data)[0]
 
     # Display predictions
     st.success(f"Predicted Procurement Time: {time_prediction}")
