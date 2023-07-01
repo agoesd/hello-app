@@ -15,7 +15,7 @@ feature2 = st.sidebar.number_input("Feature 2")
 # Add more feature inputs if needed
 
 # Load the pickle model
-with open("rtr.pkl", "rb") as file:
+with open("rtr", "rb") as file:
     model = pickle.load(file)
 
 # Procurement time prediction
