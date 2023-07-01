@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 from sklearn.metrics import mean_squared_error, mean_absolute_error
-import joblib
+import pickle
 
 # Set page title
 st.set_page_config(page_title="Procurement Time Prediction App", layout="wide")
@@ -14,8 +14,9 @@ feature1 = st.sidebar.number_input("Feature 1")
 feature2 = st.sidebar.number_input("Feature 2")
 # Add more feature inputs if needed
 
-# Load the joblib model
-model = joblib.load("modeldecisiontree_lamatender.joblib")
+# Load the pickle model
+with open("rtr.pkl", "rb") as file:
+    model = pickle.load(file)
 
 # Procurement time prediction
 st.subheader("Procurement Time Prediction")
