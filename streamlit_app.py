@@ -71,9 +71,6 @@ Klasifikasi_enc = st.sidebar.selectbox("Klasifikasi", [0, 1, 3], index=0)
 JenisBelanja_enc = st.sidebar.selectbox("Jenis Belanja", ["Barang", "Modal"], index=0)
 JenisBelanja_enc_value = 1 if JenisBelanja_enc == "Barang" else 0
 
-JenisBelanja_enc = st.sidebar.selectbox("Jenis Belanja", [0, 1], index=0)
-
-
 MetodePengadaan_enc = st.sidebar.selectbox("Metode Pengadaan", ["Tender", "Seleksi"], index=0)
 MetodePengadaan_enc_value = 1 if MetodePengadaan_enc == "Tender" else 0
 
