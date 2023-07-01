@@ -1,6 +1,3 @@
-Sure! Here's the updated code with the file name changed to "modeldecisiontree_efisiensi.joblib":
-
-```python
 import streamlit as st
 import pandas as pd
 import joblib
