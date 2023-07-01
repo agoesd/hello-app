@@ -43,10 +43,10 @@ st.markdown("---")
 # Make predictions button
 if st.button("Make Predictions"):
     # Prepare input data for prediction
-    input_data = np.array([[TglPengumuman_Bln, Lokasi_enc, Klasifikasi_enc, JenisBelanja_enc, MetodePengadaan_enc, KlasBJ_JasaKonsultasi, KlasBJ_JasaLainnya, KlasBJ_PekerjaanKonstruksi, KlasBJ_PengadaanBarang, Pagu2, HPS2]])
+    input_data = np.array([[TglPengumuman_Bln, Lokasi_enc, KlasBJ_JasaKonsultasi, KlasBJ_JasaLainnya, KlasBJ_PekerjaanKonstruksi, KlasBJ_PengadaanBarang, JenisBelanja_enc, MetodePengadaan_enc, Pagu2, HPS2]])
 
     # Ensure the input data is of the correct data type
-    input_data = input_data.astype(float)
+    input_data = input_data.astype(np.float64)
 
     # Make Procurement Time prediction
     time_prediction = time_model.predict(input_data)[0]
