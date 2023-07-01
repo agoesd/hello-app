@@ -14,6 +14,23 @@ st.sidebar.title("Procurement Prediction")
 st.sidebar.markdown("Enter the input features below:")
 
 # Create input fields for features
+bulan_options = {
+    "Januari": 0,
+    "Februari": 1,
+    "Maret": 2,
+    "April": 3,
+    "Mei": 4,
+    "Juni": 5,
+    "Juli": 6,
+    "Agustus": 7,
+    "September": 8,
+    "Oktober": 9,
+    "November": 10,
+    "Desember": 11
+}
+TglPengumuman_Bln = st.sidebar.selectbox("Bulan Pengumuman", list(bulan_options.keys()), index=0)
+TglPengumuman_Bln_value = bulan_options[TglPengumuman_Bln]
+
 lokasi_options = {
     "Aceh": 23,
     "Bali": 13,
@@ -46,7 +63,6 @@ lokasi_options = {
     "Sumatera Selatan": 14,
     "Sumatera Utara": 10
 }
-
 Lokasi_enc = st.sidebar.selectbox("Lokasi Pekerjaan", list(lokasi_options.keys()), index=0)
 Lokasi_enc_value = lokasi_options[Lokasi_enc]
 
@@ -74,6 +90,7 @@ st.markdown("---")
 if st.button("Make Predictions"):
     # Prepare input data for prediction
     input_data = pd.DataFrame({
+        "TglPengumuman_Bln": [TglPengumuman_Bln_value],
         "Lokasi_enc": [Lokasi_enc_value],
         "Klasifikasi_enc": [Klasifikasi_enc],
         "JenisBelanja_enc": [JenisBelanja_enc],
