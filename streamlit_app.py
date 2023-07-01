@@ -52,10 +52,10 @@ if st.button("Make Predictions"):
     input_data = input_data.astype(float)
 
     # Make Procurement Time prediction
-    time_prediction = time_model.predict(input_data)[0]
-
+    time_prediction = time_model.predict(input_data.reshape(1, -1))[0]
+    
     # Make Efisiensi prediction
-    efisiensi_prediction = efisiensi_model.predict(input_data)[0]
+    efisiensi_prediction = efisiensi_model.predict(input_data.reshape(1, -1))[0]
 
     # Display predictions
     st.success(f"Predicted Procurement Time: {time_prediction}")
