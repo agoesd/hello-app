@@ -4,14 +4,14 @@ import pandas as pd
 
 # Set page title and layout
 st.set_page_config(
-    page_title="Procurement Prediction App",
+    page_title="Prediksi Lama Waktu Tender/Seleksi",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
 # Set sidebar title and description
-st.sidebar.title("Procurement Prediction")
-st.sidebar.markdown("Enter the input features below:")
+st.sidebar.title("Estimasi Waktu Tender/Seleksi")
+st.sidebar.markdown("Masukan Data Tender/Seleksi:")
 
 # Create input fields for features
 bulan_options = {
@@ -143,5 +143,5 @@ if st.button("Make Predictions"):
     efisiensi_prediction = efisiensi_model.predict(input_data)[0] * 100
 
     # Display predictions
-    st.success(f"Predicted Procurement Time: {time_prediction} hari")
-    st.success(f"Predicted Efisiensi: {efisiensi_prediction:.2f}%")
+    st.success(f"Estimasi Waktu Tender/Seleksi : {time_prediction} hari")
+    st.success(f"Estimasi % Efisiensi: {efisiensi_prediction:.2f}%")
