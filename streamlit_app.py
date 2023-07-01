@@ -149,7 +149,7 @@ if st.button("Kalkulasi"):
         "Pagu2": [datascaling['Pagu2'][0]],
         "HPS2": [datascaling['HPS2'][0]]
     })
-
+    st.write(input_data)
     # Prediksi lama tender/seleksi
     time_prediction = int(time_model.predict(input_data)[0])
 
