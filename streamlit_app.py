@@ -68,7 +68,9 @@ Lokasi_enc_value = lokasi_options[Lokasi_enc]
 
 Klasifikasi_enc = st.sidebar.selectbox("Klasifikasi", [0, 1, 3], index=0)
 JenisBelanja_enc = st.sidebar.selectbox("Jenis Belanja", [0, 1], index=0)
-MetodePengadaan_enc = st.sidebar.selectbox("Metode Pengadaan", [0, 1], index=0)
+MetodePengadaan_enc = st.sidebar.selectbox("Metode Pengadaan", ["Tender", "Seleksi"], index=0)
+MetodePengadaan_enc_value = 1 if MetodePengadaan_enc == "Tender" else 0
+
 KlasBJ_JasaKonsultasi = st.sidebar.selectbox("Jasa Konsultasi?", [0, 1], index=0)
 KlasBJ_JasaLainnya = st.sidebar.selectbox("Jasa Lainnya?", [0, 1], index=0)
 KlasBJ_PekerjaanKonstruksi = st.sidebar.selectbox("Pekerjaan Konstruksi?", [0, 1], index=0)
@@ -94,7 +96,7 @@ if st.button("Make Predictions"):
         "Lokasi_enc": [Lokasi_enc_value],
         "Klasifikasi_enc": [Klasifikasi_enc],
         "JenisBelanja_enc": [JenisBelanja_enc],
-        "MetodePengadaan_enc": [MetodePengadaan_enc],
+        "MetodePengadaan_enc": [MetodePengadaan_enc_value],
         "KlasBJ_JasaKonsultasi": [KlasBJ_JasaKonsultasi],
         "KlasBJ_JasaLainnya": [KlasBJ_JasaLainnya],
         "KlasBJ_PekerjaanKonstruksi": [KlasBJ_PekerjaanKonstruksi],
