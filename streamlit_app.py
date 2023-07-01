@@ -72,6 +72,7 @@ JenisBelanja_enc = st.sidebar.selectbox("Jenis Belanja", ["Barang", "Modal"], in
 JenisBelanja_enc_value = 1 if JenisBelanja_enc == "Barang" else 0
 
 MetodePengadaan_enc = st.sidebar.selectbox("Metode Pengadaan", ["Tender", "Seleksi"], index=0)
+MetodePengadaan_enc_value = 1 if MetodePengadaan_enc == "Tender" else 0
 
 # Create input field for Jenis Pengadaan
 jenis_pengadaan_options = {
