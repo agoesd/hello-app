@@ -49,7 +49,7 @@ if st.button("Make Predictions"):
     input_data = np.reshape(input_data, (1, -1))
 
     # Ensure the input data is of the correct data type
-    input_data = input_data.astype(np.float64)
+    input_data = input_data.astype(float)
 
     # Make Procurement Time prediction
     time_prediction = time_model.predict(input_data)[0]
