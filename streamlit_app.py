@@ -1,6 +1,7 @@
 import streamlit as st
 import joblib
 import pandas as pd
+from sklearn.preprocessing import StandardScaler
 
 # Set page title and layout
 st.set_page_config(
@@ -108,6 +109,21 @@ KlasBJ_PengadaanBarang = 1 if jenis_pengadaan_options[jenis_pengadaan] == "KlasB
 Pagu2 = st.sidebar.number_input("Nilai Pagu")
 HPS2 = st.sidebar.number_input("Nilai HPS")
 
+# Create a StandardScaler object
+scaler = StandardScaler()
+
+# Create a DataFrame for scaling
+data_scaling = pd.DataFrame({
+    'Pagu': [Pagu2],
+    'HPS': [HPS2]
+})
+
+# Fit and transform the data using the scaler
+scaled_data = scaler.fit_transform(data_scaling)
+
+# Create a new DataFrame with scaled values
+datascaling = pd.DataFrame(scaled_data, columns=['Pagu2', 'HPS2'])
+
 # Model prediksi waktu tender/seleksi
 time_model = joblib.load("dtr_lamatender.joblib")
 
@@ -131,8 +147,8 @@ if st.button("Kalkulasi"):
         "KlasBJ_JasaLainnya": [KlasBJ_JasaLainnya],
         "KlasBJ_PekerjaanKonstruksi": [KlasBJ_PekerjaanKonstruksi],
         "KlasBJ_PengadaanBarang": [KlasBJ_PengadaanBarang],
-        "Pagu2": [Pagu2],
-        "HPS2": [HPS2]
+        "Pagu2": [datascaling['Pagu2'][0]],
+        "HPS2": [datascaling['HPS2'][0]]
     })
 
     # Prediksi lama tender/seleksi
