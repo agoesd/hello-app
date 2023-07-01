@@ -15,7 +15,7 @@ feature2 = st.sidebar.number_input("Feature 2")
 # Add more feature inputs if needed
 
 # Load the joblib model
-model = joblib.load("https://raw.githubusercontent.com/agoesd/hello-app/blob/main/modeldecisiontree_lamatender.joblib")
+model = joblib.load("https://github.com/agoesd/hello-app/blob/main/modeldecisiontree_lamatender.joblib")
 
 # Procurement time prediction
 st.subheader("Procurement Time Prediction")
