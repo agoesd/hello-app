@@ -67,21 +67,22 @@ Lokasi_enc = st.sidebar.selectbox("Lokasi Pekerjaan", list(lokasi_options.keys()
 Lokasi_enc_value = lokasi_options[Lokasi_enc]
 
 klasifikasi_options = {
-    "IT": 0,
-    "Operasional/TUSI": 1,
-    "Konsultansi Konstruksi": 2,
-    "Pengadaan Peralatan Mesin": 3,
-    "Pemeliharaan Peralatan/Mesin": 4,
-    "Pekerjaan Konstruksi": 5,
-    "Peralatan dan Perlengkapan Perkantoran": 6,
-    "Konsultansi": 7,
-    "Penambah Nilai Gedung": 8,
-    "Kendaraan": 9,
-    "Sewa Fotokopi": 10,
-    "Sewa operasional lain": 11,
-    "Pemeliharaan Bangunan Gedung": 12,
-    "Sewa Kendaraan": 13
+	"IT": 0,
+	"Kendaraan": 11,
+	"Konsultansi": 7,
+	"Konsultansi Konstruksi": 4,
+	"Operasional/TUSI": 1,
+	"Pekerjaan Konstruksi": 2,
+	"Pemeliharaan Bangunan Gedung": 12,
+	"Pemeliharaan Peralatan/Mesin": 3,
+	"Penambah Nilai Gedung": 13,
+	"Pengadaan Peralatan Mesin": 6,
+	"Peralatan dan Perlengkapan Perkantoran": 5,
+	"Sewa Fotokopi": 8,
+	"Sewa Kendaraan": 10,
+	"Sewa operasional lain": 9
 }
+
 Klasifikasi_enc = st.sidebar.selectbox("Klasifikasi", list(klasifikasi_options.keys()), index=0)
 Klasifikasi_enc_value = klasifikasi_options[Klasifikasi_enc]
 
@@ -143,5 +144,5 @@ if st.button("Kalkulasi"):
     efisiensi_prediction = efisiensi_model.predict(input_data)[0] * 100
 
     # Display predictions
-    st.success(f"Estimasi Waktu Tender/Seleksi: {time_prediction} hari kerja")
-    st.success(f"Estimasi Efisiensi: {efisiensi_prediction:.2f}%")
+    st.success(f"Estimasi Waktu Tender/Seleksi : {time_prediction} hari")
+    st.success(f"Estimasi % Efisiensi: {efisiensi_prediction:.2f}%")
