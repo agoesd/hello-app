@@ -43,10 +43,10 @@ Pagu2 = st.sidebar.number_input("Nilai Pagu")
 HPS2 = st.sidebar.number_input("Nilai HPS")
 
 # Load the Procurement Time model
-time_model = joblib.load("modeldecisiontree_lamatender.joblib")
+time_model = joblib.load("dtr_lamatender.joblib")
 
 # Load the Efisiensi model
-efisiensi_model = joblib.load("modeldecisiontree_efisiensi.joblib")
+efisiensi_model = joblib.load("dtr_efisiensi.joblib")
 
 # Procurement time prediction
 st.title("Procurement Prediction")
