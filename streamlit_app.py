@@ -32,36 +32,34 @@ TglPengumuman_Bln = st.sidebar.selectbox("Bulan Pengumuman", list(bulan_options.
 TglPengumuman_Bln_value = bulan_options[TglPengumuman_Bln]
 
 lokasi_options = {
-    "Aceh": 23,
-    "Bali": 13,
-    "Banten": 5,
-    "Bengkulu": 25,
-    "DI Yogyakarta": 9,
-    "DKI Jakarta": 0,
-    "Jambi": 7,
-    "Jawa Barat": 8,
-    "Jawa Tengah": 11,
-    "Jawa Timur": 1,
-    "Kalimantan Selatan": 21,
-    "Kalimantan Tengah": 16,
-    "Kalimantan Timur": 2,
-    "Kalimantan Utara": 19,
-    "Kepulauan Riau": 4,
-    "Lampung": 17,
-    "Maluku": 27,
-    "Nusa Tenggara Barat": 26,
-    "Nusa Tenggara Timur": 15,
-    "Papua": 24,
-    "Papua Barat": 29,
-    "Riau": 12,
-    "Sulawesi Barat": 28,
-    "Sulawesi Selatan": 3,
-    "Sulawesi Tengah": 6,
-    "Sulawesi Tenggara": 20,
-    "Sulawesi Utara": 22,
-    "Sumatera Barat": 18,
-    "Sumatera Selatan": 14,
-    "Sumatera Utara": 10
+	"Aceh": 23,
+	"Bali": 13,
+	"Banten": 5,
+	"Bengkulu": 25,
+	"DI Yogyakarta": 9,
+	"DKI Jakarta": 0,
+	"Jambi": 7,
+	"Jawa Barat": 8,
+	"Jawa Tengah": 11,
+	"Jawa Timur": 1,
+	"Kalimantan Selatan": 21,
+	"Kalimantan Tengah": 16,
+	"Kalimantan Timur": 2,
+	"Kalimantan Utara": 19,
+	"Kepulauan Riau": 4,
+	"Lampung": 17,
+	"Maluku": 27,
+	"Nusa Tenggara Barat": 26,
+	"Nusa Tenggara Timur": 15,
+	"Papua": 24,
+	"Riau": 12,
+	"Sulawesi Selatan": 3,
+	"Sulawesi Tengah": 6,
+	"Sulawesi Tenggara": 20,
+	"Sulawesi Utara": 22,
+	"Sumatera Barat": 18,
+	"Sumatera Selatan": 14,
+	"Sumatera Utara": 10
 }
 Lokasi_enc = st.sidebar.selectbox("Lokasi Pekerjaan", list(lokasi_options.keys()), index=0)
 Lokasi_enc_value = lokasi_options[Lokasi_enc]
@@ -87,7 +85,7 @@ Klasifikasi_enc = st.sidebar.selectbox("Klasifikasi", list(klasifikasi_options.k
 Klasifikasi_enc_value = klasifikasi_options[Klasifikasi_enc]
 
 JenisBelanja_enc = st.sidebar.selectbox("Jenis Belanja", ["Barang", "Modal"], index=0)
-JenisBelanja_enc_value = 1 if JenisBelanja_enc == "Barang" else 0
+JenisBelanja_enc_value = 1 if JenisBelanja_enc == "Modal" else 0
 
 MetodePengadaan_enc = st.sidebar.selectbox("Metode Pengadaan", ["Tender", "Seleksi"], index=0)
 MetodePengadaan_enc_value = 1 if MetodePengadaan_enc == "Tender" else 0
