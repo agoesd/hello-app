@@ -72,7 +72,6 @@ JenisBelanja_enc = st.sidebar.selectbox("Jenis Belanja", ["Barang", "Modal"], in
 JenisBelanja_enc_value = 1 if JenisBelanja_enc == "Barang" else 0
 
 MetodePengadaan_enc = st.sidebar.selectbox("Metode Pengadaan", ["Tender", "Seleksi"], index=0)
-MetodePengadaan_enc_value = 1 if MetodePengadaan_enc == "Tender" else 0
 
 # Create input field for Jenis Pengadaan
 jenis_pengadaan_options = {
@@ -120,11 +119,11 @@ if st.button("Make Predictions"):
     })
 
     # Make Procurement Time prediction
-    time_prediction = time_model.predict(input_data)[0]
+    time_prediction = int(time_model.predict(input_data)[0])
 
     # Make Efisiensi prediction
-    efisiensi_prediction = efisiensi_model.predict(input_data)[0]
+    efisiensi_prediction = efisiensi_model.predict(input_data)[0] * 100
 
     # Display predictions
     st.success(f"Predicted Procurement Time: {time_prediction}")
-    st.success(f"Predicted Efisiensi: {efisiensi_prediction}")
+    st.success(f"Predicted Efisiensi: {efisiensi_prediction:.0f}%")
