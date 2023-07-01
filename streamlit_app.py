@@ -14,7 +14,25 @@ st.sidebar.title("Procurement Prediction")
 st.sidebar.markdown("Enter the input features below:")
 
 # Create input fields for features
-TglPengumuman_Bln = st.sidebar.selectbox("Bulan Pengumuman", range(1, 13), index=0)
+#TglPengumuman_Bln = st.sidebar.selectbox("Bulan Pengumuman", range(1, 13), index=0)
+bulan_options = {
+    "Januari": 0,
+    "Februari": 1,
+    "Maret": 2,
+    "April": 3,
+    "Mei": 4,
+    "Juni": 5,
+    "Juli": 6,
+    "Agustus": 7,
+    "September": 8,
+    "Oktober": 9,
+    "November": 10,
+    "Desember": 11
+}
+TglPengumuman_Bln = st.sidebar.selectbox("Bulan Pengumuman", list(bulan_options.keys()), index=0)
+# Get the corresponding value based on the selected month
+TglPengumuman_Bln_value = bulan_options[TglPengumuman_Bln]
+
 Lokasi_enc = st.sidebar.selectbox("Lokasi Pekerjaan", range(0, 37), index=0)
 Klasifikasi_enc = st.sidebar.selectbox("Klasifikasi", [0, 1, 3], index=0)
 JenisBelanja_enc = st.sidebar.selectbox("Jenis Belanja", [0, 1], index=0)
