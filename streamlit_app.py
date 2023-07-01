@@ -67,17 +67,20 @@ Lokasi_enc = st.sidebar.selectbox("Lokasi Pekerjaan", list(lokasi_options.keys()
 Lokasi_enc_value = lokasi_options[Lokasi_enc]
 
 Klasifikasi_enc = st.sidebar.selectbox("Klasifikasi", [0, 1, 3], index=0)
-
-JenisBelanja_enc = st.sidebar.selectbox("Jenis Belanja", ["Barang", "Modal"], index=0)
-JenisBelanja_enc_value = 1 if JenisBelanja_enc == "Barang" else 0
-
+JenisBelanja_enc = st.sidebar.selectbox("Jenis Belanja", [0, 1], index=0)
 MetodePengadaan_enc = st.sidebar.selectbox("Metode Pengadaan", ["Tender", "Seleksi"], index=0)
 MetodePengadaan_enc_value = 1 if MetodePengadaan_enc == "Tender" else 0
 
-KlasBJ_JasaKonsultasi = st.sidebar.selectbox("Jasa Konsultasi?", [0, 1], index=0)
-KlasBJ_JasaLainnya = st.sidebar.selectbox("Jasa Lainnya?", [0, 1], index=0)
-KlasBJ_PekerjaanKonstruksi = st.sidebar.selectbox("Pekerjaan Konstruksi?", [0, 1], index=0)
-KlasBJ_PengadaanBarang = st.sidebar.selectbox("Pengadaan Barang?", [0, 1], index=0)
+jasa_konsultasi = st.sidebar.selectbox("Jasa Konsultasi?", ["Jasa Konsultasi", "Bukan Jasa Konsultasi"], index=0)
+jasa_lainnya = st.sidebar.selectbox("Jasa Lainnya?", ["Jasa Lainnya", "Bukan Jasa Lainnya"], index=0)
+pekerjaan_konstruksi = st.sidebar.selectbox("Pekerjaan Konstruksi?", ["Pekerjaan Konstruksi", "Bukan Pekerjaan Konstruksi"], index=0)
+pengadaan_barang = st.sidebar.selectbox("Pengadaan Barang?", ["Pengadaan Barang", "Bukan Pengadaan Barang"], index=0)
+
+KlasBJ_JasaKonsultasi = 1 if jasa_konsultasi == "Jasa Konsultasi" else 0
+KlasBJ_JasaLainnya = 1 if jasa_lainnya == "Jasa Lainnya" else 0
+KlasBJ_PekerjaanKonstruksi = 1 if pekerjaan_konstruksi == "Pekerjaan Konstruksi" else 0
+KlasBJ_PengadaanBarang = 1 if pengadaan_barang == "Pengadaan Barang" else 0
+
 Pagu2 = st.sidebar.number_input("Nilai Pagu")
 HPS2 = st.sidebar.number_input("Nilai HPS")
 
@@ -98,7 +101,7 @@ if st.button("Make Predictions"):
         "TglPengumuman_Bln": [TglPengumuman_Bln_value],
         "Lokasi_enc": [Lokasi_enc_value],
         "Klasifikasi_enc": [Klasifikasi_enc],
-        "JenisBelanja_enc": [JenisBelanja_enc_value],
+        "JenisBelanja_enc": [JenisBelanja_enc],
         "MetodePengadaan_enc": [MetodePengadaan_enc_value],
         "KlasBJ_JasaKonsultasi": [KlasBJ_JasaKonsultasi],
         "KlasBJ_JasaLainnya": [KlasBJ_JasaLainnya],
