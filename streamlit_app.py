@@ -143,5 +143,5 @@ if st.button("Kalkulasi"):
     efisiensi_prediction = efisiensi_model.predict(input_data)[0] * 100
 
     # Display predictions
-    st.success(f"Estimasi Waktu Tender/Seleksi : {time_prediction} hari")
+    st.success(f"Estimasi Waktu Tender/Seleksi : {time_prediction} hari kerja")
     st.success(f"Estimasi % Efisiensi: {efisiensi_prediction:.2f}%")
