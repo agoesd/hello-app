@@ -47,8 +47,3 @@ if st.button("Make Predictions"):
     # Display predictions
     st.success(f"Predicted Procurement Time: {time_prediction}")
     st.success(f"Predicted Efisiensi: {efisiensi_prediction}")
-```
-
-Make sure to replace "modeldecisiontree_efisiensi.joblib" with the correct file name of your "Efisiensi" model.
-
-Let me know if you have any further questions!
