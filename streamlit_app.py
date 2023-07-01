@@ -146,10 +146,10 @@ if st.button("Kalkulasi"):
         "KlasBJ_JasaLainnya": [KlasBJ_JasaLainnya],
         "KlasBJ_PekerjaanKonstruksi": [KlasBJ_PekerjaanKonstruksi],
         "KlasBJ_PengadaanBarang": [KlasBJ_PengadaanBarang],
-        "Pagu2": [datascaling['Pagu2'][0]],
-        "HPS2": [datascaling['HPS2'][0]]
+        "Pagu2": [float(f"{datascaling['Pagu2'][0]:.6f}")],
+        "HPS2": [float(f"{datascaling['HPS2'][0]:.6f}")]
     })
-    st.write(input_data)
+
     # Prediksi lama tender/seleksi
     time_prediction = int(time_model.predict(input_data)[0])
 
@@ -159,3 +159,5 @@ if st.button("Kalkulasi"):
     # Display predictions
     st.success(f"Estimasi Waktu Tender/Seleksi: {time_prediction} hari kerja")
     st.success(f"Estimasi Efisiensi: {efisiensi_prediction:.2f}%")
+
+    st.write(input_data)
