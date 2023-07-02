@@ -146,8 +146,8 @@ if st.button("Kalkulasi"):
         "KlasBJ_JasaLainnya": [KlasBJ_JasaLainnya],
         "KlasBJ_PekerjaanKonstruksi": [KlasBJ_PekerjaanKonstruksi],
         "KlasBJ_PengadaanBarang": [KlasBJ_PengadaanBarang],
-        "Pagu2": [float(f"{datascaling['Pagu2'][0]:.6f}")],
-        "HPS2": [float(f"{datascaling['HPS2'][0]:.6f}")]
+        "Pagu2": [Pagu2],
+        "HPS2": [HPS2]
     })
 
     # Prediksi lama tender/seleksi
