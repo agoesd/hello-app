@@ -117,15 +117,13 @@ data_scaling = pd.DataFrame({
     'HPS2': [HPS2]
 })
 
-#datascaling = pd.DataFrame(scaler.fit_transform(data5[['Pagu','HPS']]),columns=['Pagu2','HPS2'])
-
 # Fit and transform the data using the scaler
 #scaled_data = scaler.fit_transform(data_scaling)
 
 # Create a new DataFrame with scaled values
 #datascaling = pd.DataFrame(scaled_data, columns=['Pagu2', 'HPS2'])
 
-datascaling = pd.DataFrame(scaler.fit_transform(data_scaling[['Pagu2','HPS2']]),columns=['Pagu2','HPS2'])
+datascaling = pd.DataFrame(scaler.fit_transform(data_scaling[['Pagu2','HPS2']]),columns=['Pagus','HPSs'])
 
 # Model prediksi waktu tender/seleksi
 time_model = joblib.load("dtr_lamatender.joblib")
