@@ -139,10 +139,10 @@ scaler = StandardScaler()
 scaled_data = pd.DataFrame(scaler.fit_transform(data), columns=data.columns)
 
 # Display the original and scaled data
-print("Original Data:")
-print(data)
-print("\nScaled Data:")
-print(scaled_data)
+st.write("Original Data:")
+st.write(data)
+st.write("\nScaled Data:")
+st.write(scaled_data)
 
 
 # Model prediksi waktu tender/seleksi
