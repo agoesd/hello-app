@@ -112,27 +112,6 @@ HPS2 = st.sidebar.number_input("Nilai HPS (dalam ribuan)", value=0, format="%d",
 # Create a StandardScaler object
 scaler = StandardScaler()
 
-# Create a DataFrame for scaling
-data_scaling = pd.DataFrame({
-    'Pagu2': [Pagu2, Pagu2, Pagu2],
-    'HPS2': [HPS2, HPS2, HPS2]
-})
-
-# Fit and transform the data using the scaler
-#scaled_data = scaler.fit_transform(data_scaling)
-
-# Create a new DataFrame with scaled values
-#datascaling = pd.DataFrame(scaled_data, columns=['Pagu2', 'HPS2'])
-
-#datascaling = pd.DataFrame(scaler.fit_transform(data_scaling[['Pagu2','HPS2']]),columns=['Pagu2','HPS2'])
-datascaling = pd.DataFrame(scaler.fit_transform(data_scaling), columns=data_scaling.columns)
-
-# Dummy 2---------
-
-# User input values
-#Pagu2 = st.sidebar.number_input("Nilai Pagu (dalam ribuan)", value=0, format="%d", step=1000)
-#HPS2 = st.sidebar.number_input("Nilai HPS (dalam ribuan)", value=0, format="%d", step=1000)
-
 # Generate 100 random data points
 random_values = np.random.randint(low=HPS2, high=Pagu2, size=(100, 2))
 
@@ -142,25 +121,11 @@ data = pd.DataFrame({
     'HPS2': [HPS2] + list(random_values[:, 1])
 })
 
-# Create a StandardScaler object
-scaler = StandardScaler()
-
 # Perform scaling
 scaled_data = pd.DataFrame(scaler.fit_transform(data), columns=data.columns)
 
 # Fetch the first row of scaled data from each column
 first_row_scaled = scaled_data.iloc[0]
-
-# Display the original and scaled data
-st.write("Original Data:")
-st.write(data)
-st.write("\nScaled Data:")
-st.write(scaled_data)
-st.write("\nFirst Row of Scaled Data:")
-st.write(first_row_scaled)
-
-# End Dummy
-
 
 # Model prediksi waktu tender/seleksi
 time_model = joblib.load("dtr_lamatender.joblib")
@@ -185,8 +150,8 @@ if st.button("Kalkulasi"):
         "KlasBJ_JasaLainnya": [KlasBJ_JasaLainnya],
         "KlasBJ_PekerjaanKonstruksi": [KlasBJ_PekerjaanKonstruksi],
         "KlasBJ_PengadaanBarang": [KlasBJ_PengadaanBarang],
-        "Pagu2": [float(f"{datascaling['Pagu2'][0]:.6f}")],
-        "HPS2": [float(f"{datascaling['HPS2'][0]:.6f}")]
+        "Pagu2": [float(f"{first_row_scaled['Pagu2']:.6f}")],
+        "HPS2": [float(f"{first_row_scaled['HPS2']:.6f}")]
     })
 
     # Prediksi lama tender/seleksi
@@ -201,5 +166,4 @@ if st.button("Kalkulasi"):
 
     st.write(input_data)
     st.write(data_scaling)
-    #st.write(scaled_data)
     st.write(datascaling)
