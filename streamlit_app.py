@@ -174,8 +174,3 @@ if st.button("Kalkulasi"):
     # Display predictions
     st.success(f"Estimasi Waktu Tender/Seleksi: {time_prediction} hari kerja")
     st.success(f"Estimasi Efisiensi: {efisiensi_prediction:.2f}%")
-
-    st.write(Pagu2)
-    st.write(HPS2)
-    st.write(scaled_data)
-    st.write(input_data)
