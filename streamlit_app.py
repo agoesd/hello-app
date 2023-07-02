@@ -144,6 +144,36 @@ st.write(data)
 st.write("\nScaled Data:")
 st.write(scaled_data)
 
+# Dummy---------
+
+# Randomly generated values
+random_values = np.random.randint(low=100000, high=1000000, size=(100, 2))
+
+# Create a sample DataFrame
+data = pd.DataFrame({
+    'Pagu2': [Pagu2] + list(random_values[:, 0]),
+    'HPS2': [HPS2] + list(random_values[:, 1])
+})
+
+# Create a StandardScaler object
+scaler = StandardScaler()
+
+# Perform scaling
+scaled_data = pd.DataFrame(scaler.fit_transform(data), columns=data.columns)
+
+# Fetch the first row of scaled data from each column
+first_row_scaled = scaled_data.iloc[0]
+
+# Display the original and scaled data
+st.write("Original Data:")
+st.write(data)
+st.write("\nScaled Data:")
+st.write(scaled_data)
+st.write("\nFirst Row of Scaled Data:")
+st.write(first_row_scaled)
+
+# End Dummy
+
 
 # Model prediksi waktu tender/seleksi
 time_model = joblib.load("dtr_lamatender.joblib")
