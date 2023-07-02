@@ -165,3 +165,4 @@ if st.button("Kalkulasi"):
     st.write(input_data)
     st.write(data_scaling)
     st.write(scaled_data)
+    st.write(datascaling)
