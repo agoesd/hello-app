@@ -126,7 +126,24 @@ data_scaling = pd.DataFrame({
 #datascaling = pd.DataFrame(scaler.fit_transform(data_scaling[['Pagu2','HPS2']]),columns=['Pagu2','HPS2'])
 datascaling = pd.DataFrame(scaler.fit_transform(data_scaling), columns=data_scaling.columns)
 
-st.write(datascaling)
+# Create a sample DataFrame
+data = pd.DataFrame({
+    'Pagu2': [10000000, 5000000, 3000000],
+    'HPS2': [9999000, 4999000, 2999000]
+})
+
+# Create a StandardScaler object
+scaler = StandardScaler()
+
+# Perform scaling
+scaled_data = pd.DataFrame(scaler.fit_transform(data), columns=data.columns)
+
+# Display the original and scaled data
+print("Original Data:")
+print(data)
+print("\nScaled Data:")
+print(scaled_data)
+
 
 # Model prediksi waktu tender/seleksi
 time_model = joblib.load("dtr_lamatender.joblib")
