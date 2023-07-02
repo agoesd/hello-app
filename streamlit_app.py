@@ -123,7 +123,7 @@ data_scaling = pd.DataFrame({
 # Create a new DataFrame with scaled values
 #datascaling = pd.DataFrame(scaled_data, columns=['Pagu2', 'HPS2'])
 
-datascaling = pd.DataFrame(scaler.fit_transform(data_scaling[['Pagu2','HPS2']]),columns=['Pagus','HPSs'])
+datascaling = pd.DataFrame(scaler.fit_transform(data_scaling[['Pagu2','HPS2']]),columns=['Pagu2','HPS2'])
 
 # Model prediksi waktu tender/seleksi
 time_model = joblib.load("dtr_lamatender.joblib")
@@ -148,8 +148,8 @@ if st.button("Kalkulasi"):
         "KlasBJ_JasaLainnya": [KlasBJ_JasaLainnya],
         "KlasBJ_PekerjaanKonstruksi": [KlasBJ_PekerjaanKonstruksi],
         "KlasBJ_PengadaanBarang": [KlasBJ_PengadaanBarang],
-        "Pagu2": [float(f"{datascaling['Pagus'][0]:.6f}")],
-        "HPS2": [float(f"{datascaling['HPSs'][0]:.6f}")]
+        "Pagu2": [float(f"{datascaling['Pagu2'][0]:.6f}")],
+        "HPS2": [float(f"{datascaling['HPS2'][0]:.6f}")]
     })
 
     # Prediksi lama tender/seleksi
