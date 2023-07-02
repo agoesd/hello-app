@@ -166,5 +166,4 @@ if st.button("Kalkulasi"):
     st.success(f"Estimasi Efisiensi: {efisiensi_prediction:.2f}%")
 
     st.write(input_data)
-    st.write(data_scaling)
-    st.write(datascaling)
+    st.write(scaled_data)
