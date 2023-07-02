@@ -113,8 +113,8 @@ scaler = StandardScaler()
 
 # Create a DataFrame for scaling
 data_scaling = pd.DataFrame({
-    'Pagu2': [Pagu2],
-    'HPS2': [HPS2]
+    'Pagu2': [10000000],
+    'HPS2': [9999000]
 })
 
 # Fit and transform the data using the scaler
