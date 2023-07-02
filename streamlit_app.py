@@ -113,9 +113,11 @@ scaler = StandardScaler()
 
 # Create a DataFrame for scaling
 data_scaling = pd.DataFrame({
-    'Pagu': [Pagu2],
-    'HPS': [HPS2]
+    'Pagu2': [Pagu2],
+    'HPS2': [HPS2]
 })
+
+#datascaling = pd.DataFrame(scaler.fit_transform(data5[['Pagu','HPS']]),columns=['Pagu2','HPS2'])
 
 # Fit and transform the data using the scaler
 scaled_data = scaler.fit_transform(data_scaling)
