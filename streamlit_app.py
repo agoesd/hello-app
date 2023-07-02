@@ -112,11 +112,16 @@ KlasBJ_PengadaanBarang = 1 if jenis_pengadaan_options[jenis_pengadaan] == "KlasB
 def format_thousands_separator(value):
     return "{:,.0f}".format(value)
 
-Pagu2_raw = st.sidebar.number_input("Nilai Pagu (dalam ribuan)", value=0, step=1000)
-Pagu2 = Pagu2_raw / 1000
-formatted_Pagu2 = format_thousands_separator(Pagu2_raw)
+#Pagu2_raw = st.sidebar.number_input("Nilai Pagu (dalam ribuan)", value=0, step=1000)
+#Pagu2 = Pagu2_raw / 1000
+#formatted_Pagu2 = format_thousands_separator(Pagu2_raw)
 #st.sidebar.write(f"Nilai Pagu (dalam ribuan): {formatted_Pagu2}")
-st.sidebar.write(f"**{formatted_Pagu2.replace(',', '.')}**")
+#st.sidebar.write(f"**{formatted_Pagu2.replace(',', '.')}**")
+
+Pagu2_raw = st.sidebar.number_input("Nilai Pagu (dalam ribuan):", value=0, step=1000, format="%.0f", key="Pagu2_input")
+formatted_Pagu2_raw = format_thousands_separator(Pagu2_raw)
+st.sidebar.write(f"(thousand separator value shown here): **{formatted_Pagu2_raw.replace(',', '.')}**")
+Pagu2 = Pagu2_raw / 1000
 
 HPS2_raw = st.sidebar.number_input("Nilai HPS (dalam ribuan)", value=0, step=1000)
 HPS2 = HPS2_raw / 1000
