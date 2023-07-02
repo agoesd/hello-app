@@ -132,8 +132,8 @@ st.markdown("---")
 # Tombol aksi
 if st.button("Kalkulasi"):
     # Olah nilai input Pagu dan HPS, konversi dengan StandarScaler sesuai format model
-    # Generate 100 random data points
-    random_values = np.random.randint(low=HPS2, high=Pagu2, size=(100, 2))
+    # Generate 1000 random data points
+    random_values = np.random.randint(low=HPS2, high=Pagu2, size=(1000, 2))
     
     # Create a sample DataFrame
     data = pd.DataFrame({
