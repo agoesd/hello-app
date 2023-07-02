@@ -116,13 +116,13 @@ Pagu2_raw = st.sidebar.number_input("Nilai Pagu (dalam ribuan)", value=0, step=1
 Pagu2 = Pagu2_raw / 1000
 formatted_Pagu2 = format_thousands_separator(Pagu2_raw)
 #st.sidebar.write(f"Nilai Pagu (dalam ribuan): {formatted_Pagu2}")
-st.sidebar.write(f"Nilai Pagu (dalam ribuan): **{formatted_Pagu2.replace(',', '.')}**")
+st.sidebar.write(f"**{formatted_Pagu2.replace(',', '.')}**")
 
 HPS2_raw = st.sidebar.number_input("Nilai HPS (dalam ribuan)", value=0, step=1000)
 HPS2 = HPS2_raw / 1000
 formatted_HPS2 = format_thousands_separator(HPS2_raw)
 #st.sidebar.write(f"Nilai HPS (dalam ribuan): {formatted_HPS2}")
-st.sidebar.write(f"Nilai HPS (dalam ribuan): **{formatted_HPS2.replace(',', '.')}**")
+st.sidebar.write(f"**{formatted_HPS2.replace(',', '.')}**")
 
 # Model prediksi waktu tender/seleksi
 time_model = joblib.load("dtr_lamatender.joblib")
@@ -138,8 +138,6 @@ st.markdown("---")
 if st.button("Kalkulasi"):
     # Olah nilai input Pagu dan HPS, konversi dengan StandarScaler sesuai format model
     # Generate 100 random data points
-    st.write(Pagu2)
-    st.write(HPS2)
     random_values = np.random.randint(low=HPS2, high=Pagu2, size=(100, 2))
     
     # Create a sample DataFrame
@@ -181,3 +179,8 @@ if st.button("Kalkulasi"):
     # Display predictions
     st.success(f"Estimasi Waktu Tender/Seleksi: {time_prediction} hari kerja")
     st.success(f"Estimasi Efisiensi: {efisiensi_prediction:.2f}%")
+
+    st.write(Pagu2)
+    st.write(HPS2)
+    st.write(scaled_data)
+    st.write(input_data)
