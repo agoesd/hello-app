@@ -113,8 +113,8 @@ scaler = StandardScaler()
 
 # Create a DataFrame for scaling
 data_scaling = pd.DataFrame({
-    'Pagu2': [Pagu2],
-    'HPS2': [HPS2]
+    'Pagu': [Pagu2],
+    'HPS': [HPS2]
 })
 
 # Fit and transform the data using the scaler
@@ -146,8 +146,8 @@ if st.button("Kalkulasi"):
         "KlasBJ_JasaLainnya": [KlasBJ_JasaLainnya],
         "KlasBJ_PekerjaanKonstruksi": [KlasBJ_PekerjaanKonstruksi],
         "KlasBJ_PengadaanBarang": [KlasBJ_PengadaanBarang],
-        "Pagu2": [Pagu2],
-        "HPS2": [HPS2]
+        "Pagu2": [float(f"{datascaling['Pagu2'][0]:.6f}")],
+        "HPS2": [float(f"{datascaling['HPS2'][0]:.6f}")]
     })
 
     # Prediksi lama tender/seleksi
@@ -161,3 +161,4 @@ if st.button("Kalkulasi"):
     st.success(f"Estimasi Efisiensi: {efisiensi_prediction:.2f}%")
 
     st.write(input_data)
+    st.write(data_scaling)
