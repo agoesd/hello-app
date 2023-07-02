@@ -82,7 +82,7 @@ klasifikasi_options = {
     "Sewa Kendaraan": 10,
     "Sewa operasional lain": 9
 }
-Klasifikasi_enc = st.sidebar.selectbox("Klasifikasi", list(klasifikasi_options.keys()), index=0)
+Klasifikasi_enc = st.sidebar.selectbox("Klasifikasi Barang/Jasa", list(klasifikasi_options.keys()), index=0)
 Klasifikasi_enc_value = klasifikasi_options[Klasifikasi_enc]
 
 JenisBelanja_enc = st.sidebar.selectbox("Jenis Belanja", ["Barang", "Modal"], index=0)
