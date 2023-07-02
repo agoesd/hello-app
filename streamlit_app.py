@@ -121,25 +121,24 @@ st.markdown("---")
 
 # Tombol aksi
 if st.button("Kalkulasi"):
-
-# Olah nilai input Pagu dan HPS, konversi dengan StandarScaler sesuai format model
-        # Generate 100 random data points
-        random_values = np.random.randint(low=HPS2, high=Pagu2, size=(100, 2))
-        
-        # Create a sample DataFrame
-        data = pd.DataFrame({
-            'Pagu2': [Pagu2] + list(random_values[:, 0]),
-            'HPS2': [HPS2] + list(random_values[:, 1])
-        })
-        
-        # Create a StandardScaler object
-        scaler = StandardScaler()
-        
-        # Perform scaling
-        scaled_data = pd.DataFrame(scaler.fit_transform(data), columns=data.columns)
-        
-        # Fetch the first row of scaled data from each column
-        first_row_scaled = scaled_data.iloc[0]
+    # Olah nilai input Pagu dan HPS, konversi dengan StandarScaler sesuai format model
+    # Generate 100 random data points
+    random_values = np.random.randint(low=HPS2, high=Pagu2, size=(100, 2))
+    
+    # Create a sample DataFrame
+    data = pd.DataFrame({
+        'Pagu2': [Pagu2] + list(random_values[:, 0]),
+        'HPS2': [HPS2] + list(random_values[:, 1])
+    })
+    
+    # Create a StandardScaler object
+    scaler = StandardScaler()
+    
+    # Perform scaling
+    scaled_data = pd.DataFrame(scaler.fit_transform(data), columns=data.columns)
+    
+    # Fetch the first row of scaled data from each column
+    first_row_scaled = scaled_data.iloc[0]
     
     # Prepare input data for prediction
     input_data = pd.DataFrame({
