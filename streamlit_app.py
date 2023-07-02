@@ -106,8 +106,8 @@ KlasBJ_JasaLainnya = 1 if jenis_pengadaan_options[jenis_pengadaan] == "KlasBJ_Ja
 KlasBJ_PekerjaanKonstruksi = 1 if jenis_pengadaan_options[jenis_pengadaan] == "KlasBJ_PekerjaanKonstruksi" else 0
 KlasBJ_PengadaanBarang = 1 if jenis_pengadaan_options[jenis_pengadaan] == "KlasBJ_PengadaanBarang" else 0
 
-Pagu2 = st.sidebar.number_input("Nilai Pagu (dalam ribuan)", value=0, format="%d", step=1000)
-HPS2 = st.sidebar.number_input("Nilai HPS (dalam ribuan)", value=0, format="%d", step=1000)
+Pagu2 = st.sidebar.number_input("Nilai Pagu (dalam rupiah)", value=0, format="%d", step=1000)/1000
+HPS2 = st.sidebar.number_input("Nilai HPS (dalam rupiah)", value=0, format="%d", step=1000)/1000
 
 # Model prediksi waktu tender/seleksi
 time_model = joblib.load("dtr_lamatender.joblib")
@@ -123,6 +123,8 @@ st.markdown("---")
 if st.button("Kalkulasi"):
     # Olah nilai input Pagu dan HPS, konversi dengan StandarScaler sesuai format model
     # Generate 100 random data points
+    st.write(Pagu2)
+    st.write(HPS2)
     random_values = np.random.randint(low=HPS2, high=Pagu2, size=(100, 2))
     
     # Create a sample DataFrame
